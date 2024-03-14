@@ -1,0 +1,16 @@
+name: Bump stale issues
+
+on:
+  schedule:
+    # Run every day at 1am
+    - cron: '0 1 * * *'
+
+jobs:
+  fresh-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Bump stale issues
+        uses: c-hive/fresh-bot@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
